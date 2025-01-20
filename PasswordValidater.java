@@ -10,6 +10,16 @@ public class PasswordValidater {
 		specialCharacterset=new HashSet<Character>();
 		specialCharacterset.add('!');
 		specialCharacterset.add('@');
+		specialCharacterset.add('$');
+		specialCharacterset.add('%');
+		specialCharacterset.add('&');
+		specialCharacterset.add('(');
+		specialCharacterset.add(')');
+		specialCharacterset.add('*');
+		specialCharacterset.add('+');
+		specialCharacterset.add('-');
+		specialCharacterset.add('.');
+		specialCharacterset.add('_');
 		scanner=new Scanner(System.in);
 		password=getPassword();
 		if(password!=null && !password.isEmpty()) {
@@ -26,11 +36,11 @@ public class PasswordValidater {
 		    if (!(password.length() >= 8)) {
 		        System.out.println("Password must be longer than 10 characters.");
 		    } else if (!Character.isUpperCase(password.charAt(0))) {
-		        System.out.println("Password must start with an uppercase letter.");
+		        System.out.println("Password must contain atleast an uppercase letter.");
 		    } else if(!containsNumber()) {
-		        System.out.println("Count constarint check ");
+		        System.out.println("Password must contain numbers");
 		    } else if (!containsSpecialcharacter()) {
-		        System.out.println("Password must contain at least one special character (!, @, #).");
+		        System.out.println("Password must contain at least one special character such as (!, @, #) etc ");
 		    }else {
 		    	System.out.println("Password Strong good to go !");
 		    }
